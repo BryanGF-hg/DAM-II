@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  </head>
+<body>
+</body>
+<script>
+// gestor de inscripcion de alumnos
+const alumnos = [
+  {
+    nombre: "Ana García",
+    edad: 19,
+    tieneMatricula: true,
+    bloqueado: false,
+    precioCurso: 450,
+    descuento: 10,
+    nota: 8.5
+  },
+  {
+    nombre: "Carlos López",
+    edad: 22,
+    tieneMatricula: true,
+    bloqueado: false,
+    precioCurso: 500,
+    descuento: 15,
+    nota: 7.2
+  },
+  {
+    nombre: "Marta Pérez",
+    edad: 20,
+    tieneMatricula: false,
+    bloqueado: true,
+    precioCurso: 400,
+    descuento: 0,
+    nota: 5.8
+  },
+  {
+    nombre: "Luis Fernández",
+    edad: 24,
+    tieneMatricula: true,
+    bloqueado: false,
+    precioCurso: 600,
+    descuento: 20,
+    nota: 9.1
+  },
+  {
+    nombre: "Sofía Martínez",
+    edad: 18,
+    tieneMatricula: true,
+    bloqueado: false,
+    precioCurso: 350,
+    descuento: 5,
+    nota: 8.0
+  },
+  {
+    nombre: "Javier Ruiz",
+    edad: 21,
+    tieneMatricula: false,
+    bloqueado: true,
+    precioCurso: 550,
+    descuento: 0,
+    nota: 4.9
+  },
+  {
+    nombre: "Elena Torres",
+    edad: 23,
+    tieneMatricula: true,
+    bloqueado: false,
+    precioCurso: 700,
+    descuento: 25,
+    nota: 9.7
+  },
+  {
+    nombre: "Pablo Sánchez",
+    edad: 20,
+    tieneMatricula: true,
+    bloqueado: false,
+    precioCurso: 480,
+    descuento: 10,
+    nota: 6.5
+  },
+  {
+    nombre: "Lucía Gómez",
+    edad: 19,
+    tieneMatricula: false,
+    bloqueado: false,
+    precioCurso: 420,
+    descuento: 0,
+    nota: 7.8
+  },
+  {
+    nombre: "Miguel Navarro",
+    edad: 25,
+    tieneMatricula: true,
+    bloqueado: true,
+    precioCurso: 650,
+    descuento: 30,
+    nota: 5.5
+  }
+];
+
+function calcularPrecioFinal(alumnos){
+  return alumnos.precioCurso - (alumnos.precioCurso * alumnos.descuento / 100);
+}
+
+function puedeAcceder(alumnos){
+  return alumnos.edad >= 18 &&
+  alumnos.tieneMatricula &&
+  !alumnos.bloqueado;
+}
+
+
+
+function obtenerClasificacion(alumnos){
+ if (alumnos.nota < 0 || alumnos.nota > 10){
+   return("nota no valida");
+ } else if (alumnos.nota < 5){
+    return("suspenso");   
+ } else if (alumnos.nota < 6){
+    return("aprobado");
+ } else if (alumnos.nota < 7){  
+    return("bien");
+ } else if (alumnos.nota < 9){  
+    return("notable");
+ } else {
+   return("sobresaliente");
+ } 
+}
+
+function informacion(alumnos){
+  console.log("El alumno:", alumnos.nombre, "es");
+  if (puedeAcceder(alumnos)) {
+  console.log("Acceso: Puede acceder");
+  } else {
+  console.log("Acceso: No puede acceder");
+  }
+  console.log("Con una nota de:", obtenerClasificacion(alumnos));
+  console.log(calcularPrecioFinal(alumnos) + "€");
+}
+
+for (let alumno of alumnos) {
+informacion(alumno);
+}
+</script>
+</html>
