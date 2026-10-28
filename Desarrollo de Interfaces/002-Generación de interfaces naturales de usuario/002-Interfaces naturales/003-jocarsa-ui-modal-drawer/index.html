@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   bryanfghg | interfaz integrada
+  </title>
+  <link href="https://static.jocarsa.com/logos/white.svg" rel="shortcut icon" type="image/svg+xml"/>
+  <link href="css/002-estilos.css" rel="stylesheet"/>
+ </head>
+ <body class="jocarsa-iu">
+  <header>
+   <div class="corporativo">
+    <img alt="" src="https://static.jocarsa.com/logos/white.svg"/>
+    <h1>
+     bryanfghg | interfaz integrada
+    </h1>
+   </div>
+   <div id="herramientas">
+    <input id="buscador" placeholder="Buscar en clientes…" type="search"/>
+    <button id="filtros" type="button" class="bg-btn secondary" title="Filtros (simulado)">
+      ⚙ Filtros
+    </button>    
+    <button id="nuevo">
+     + Nuevo
+    </button>
+   </div>
+   <div id="usuario">
+<div class="imagen" id="avatar-usuario" role="button" tabindex="0" title="Ver mi ficha" aria-label="Ver mi ficha de usuario"></div>
+    <div>
+     <p id="nombre-de-usuario" class="bg-nombre-usuario" role="button" tabindex="0" title="Ver mi personaje">
+      Bryan Glot Fong
+     </p>
+     <a href="login.html">
+      Cerrar sesión
+     </a>
+    </div>
+   </div>
+  </header>
+  <main>
+   <nav id="navegacion">
+    <div class="contenido-columna">
+    </div>
+    <button class="minimizar" title="Minimizar">
+     ◀
+    </button>
+   </nav>
+   <div class="separador" data-left="navegacion">
+   </div>
+   <section id="entidades">
+    <div class="contenido-columna">
+    </div>
+    <button class="minimizar" title="Minimizar">
+     ◀
+    </button>
+   </section>
+   <div class="separador" data-left="entidades">
+   </div>
+   <div class="escenario" id="escenario">
+   </div>
+  </main>
+  <template id="tpl-nav">
+   <a href="#">
+    <span class="ficha">
+    </span>
+    <span class="etiqueta">
+    </span>
+   </a>
+  </template>
+  <template id="tpl-card">
+   <article draggable="true">
+    <span class="ficha">
+    </span>
+    <span class="etiqueta">
+    </span>
+   </article>
+  </template>
+  <template id="tpl-fila">
+   <tr>
+   </tr>
+  </template>
+  <!-- Componentes flotantes globales -->
+  <div class="bg-drawer-overlay" id="juDrawerOverlay" aria-hidden="true"></div>
+  <aside class="bg-drawer" id="juDrawer" aria-hidden="true" aria-label="Editor lateral">
+   <div class="bg-drawer-resizer" id="juDrawerResizer" title="Arrastra para redimensionar"></div>
+   <header class="bg-drawer-header">
+    <div>
+     <small id="juDrawerMode">CREAR</small>
+     <h2 id="juDrawerTitle">Nuevo registro</h2>
+    </div>
+    <button class="bg-drawer-close" id="juDrawerClose" type="button" aria-label="Cerrar">×</button>
+   </header>
+   <div class="bg-drawer-body" id="juDrawerBody"></div>
+  </aside>
+
+  <div class="bg-modal-layer" id="juModal" aria-hidden="true">
+   <div class="bg-modal-backdrop" data-modal-close></div>
+   <section class="bg-modal-window" role="dialog" aria-modal="true" aria-labelledby="juModalTitle">
+    <header class="bg-modal-header">
+     <h2 id="juModalTitle">Ventana modal</h2>
+     <button class="bg-modal-close" type="button" data-modal-close aria-label="Cerrar">×</button>
+    </header>
+    <div class="bg-modal-body" id="juModalBody"></div>
+   </section>
+  </div>
+
+  <!-- ===== V8 · Gamificación + Bot IA ===== -->
+  <section class="bg-hud oculto" id="juHud" aria-label="Panel de personaje" aria-hidden="true"></section>
+
+  <button class="bg-ia-fab" id="juIaFab" type="button" aria-label="Abrir asistente IA">
+   <span class="bg-ia-fab-icon">✦</span>
+   <span class="bg-ia-fab-label">IA</span>
+  </button>
+
+  <aside class="bg-ia-panel" id="juIaPanel" aria-hidden="true">
+   <header class="bg-ia-panel-header">
+    <h2>Asistente bryanfghg</h2>
+    <button class="bg-ia-cerrar" id="juIaCerrar" type="button" aria-label="Cerrar">×</button>
+   </header>
+   <div class="bg-ia-mensajes" id="juIaMensajes" aria-live="polite"></div>
+   <form class="bg-ia-form" id="juIaForm">
+    <input id="juIaInput" type="text" placeholder="Pregúntame algo…" autocomplete="off" required>
+    <button class="bg-btn" type="submit">Enviar</button>
+   </form>
+   <footer class="bg-ia-panel-footer">
+    <span id="juIaEstado">Modo simulado · pronto conectado a Ollama local</span>
+   </footer>
+  </aside>
+  <!-- ===== /V8 ===== -->
+
+<!-- ===== V10 · Ficha de usuario ===== -->
+<aside class="bg-user-panel oculto" id="bgUserPanel" aria-hidden="true" aria-label="Ficha de usuario">
+  <header class="bg-user-panel-header">
+    <h2>Ficha de usuario</h2>
+    <button class="bg-user-cerrar" id="bgUserCerrar" type="button" aria-label="Cerrar">×</button>
+  </header>
+  <div class="bg-user-panel-body" id="bgUserPanelBody"></div>
+</aside>
+<!-- ===== /V10 ===== -->
+
+<!-- ===== V9 bryanfghg.iu ===== -->
+  <script defer src="js/componentes.js"></script>
+  <script defer src="js/ficha-usuario.js"></script>  
+  <script defer src="js/gamificacion.js"></script>
+  <script defer src="js/ia-bot.js"></script>
+ </body>
+</html>
+
