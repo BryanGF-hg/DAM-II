@@ -1,0 +1,18 @@
+{
+  "usuario": {
+    "nombre": "Bryan Glot Fong",
+    "clase": "Guerrero",
+    "nivel": 7,
+    "xp": 240,
+    "xpSiguiente": 500,
+    "hp": 42,
+    "hpMax": 50,
+    "oro": 128,
+    "racha": 5
+  },
+  "misiones": [
+    { "id": "m1", "titulo": "Alta de cliente", "xp": 20, "oro": 10, "completada": true },
+    { "id": "m2", "titulo": "Revisar productos con stock 0", "xp": 35, "oro": 15, "completada": false },
+    { "id": "m3", "titulo": "Exportar listado mensual", "xp": 50, "oro": 25, "completada": false }
+  ]
+}
